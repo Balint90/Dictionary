@@ -31,9 +31,20 @@ namespace Dictionary
                 employeesDirectory.Add(employee.Role, employee);
             }
 
-            for (int i = 0; i < employeesDirectory.Count; i++)
+            //for (int i = 0; i < employeesDirectory.Count; i++)
+            //{
+            //    KeyValuePair<string, Employee> keyValuePair = new KeyValuePair<string, Employee>(employeesDirectory.Keys[i], employeesDirectory.Values);
+            //}
+
+            foreach (KeyValuePair<string, Employee> keyValuePair in employeesDirectory)
             {
-                //KeyValuePair<string, Employee> keyValuePair = employeesDirectory;
+                Console.WriteLine(keyValuePair.Key);
+                Employee employee = keyValuePair.Value;
+
+                Console.WriteLine("Employee name: {0}", employee.Name);
+                Console.WriteLine("Employee role: {0}", employee.Role);
+                Console.WriteLine("Employee age: {0}", employee.Age);
+                Console.WriteLine("Employee salary: {0}", employee.Salary);
             }
 
             string key = "CEO";
