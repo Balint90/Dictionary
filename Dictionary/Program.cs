@@ -42,6 +42,7 @@ namespace Dictionary
                 Console.WriteLine("Employee salary: {0}", employee.Salary);
             }
 
+            //update
             string keyToUpdate = "HR";
             if (employeesDirectory.ContainsKey(keyToUpdate))
             {
@@ -51,6 +52,17 @@ namespace Dictionary
             else
             {
                 Console.WriteLine("No employee found with this key {0}", keyToUpdate);
+            }
+
+            //Remove
+            string keyToRemove = "Intern";
+            if (!employeesDirectory.Remove(keyToRemove))
+            {
+                Console.WriteLine("Employee with Role / Key { 0} was removed!", keyToRemove);
+            }
+            else
+            {
+                Console.WriteLine("No employee found with this key {0}", keyToRemove);
             }
 
             string key = "CEO";
