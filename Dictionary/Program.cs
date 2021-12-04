@@ -31,11 +31,6 @@ namespace Dictionary
                 employeesDirectory.Add(employee.Role, employee);
             }
 
-            //for (int i = 0; i < employeesDirectory.Count; i++)
-            //{
-            //    KeyValuePair<string, Employee> keyValuePair = new KeyValuePair<string, Employee>(employeesDirectory.Keys[i], employeesDirectory.Values);
-            //}
-
             foreach (KeyValuePair<string, Employee> keyValuePair in employeesDirectory)
             {
                 Console.WriteLine(keyValuePair.Key);
@@ -45,6 +40,17 @@ namespace Dictionary
                 Console.WriteLine("Employee role: {0}", employee.Role);
                 Console.WriteLine("Employee age: {0}", employee.Age);
                 Console.WriteLine("Employee salary: {0}", employee.Salary);
+            }
+
+            string keyToUpdate = "HR";
+            if (employeesDirectory.ContainsKey(keyToUpdate))
+            {
+                employeesDirectory[keyToUpdate] = new Employee("HR", "Eleka", 26, 18);
+                Console.WriteLine("Employee with Role/Key {0} was updated!", keyToUpdate);
+            }
+            else
+            {
+                Console.WriteLine("No employee found with this key {0}", keyToUpdate);
             }
 
             string key = "CEO";
